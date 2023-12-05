@@ -193,11 +193,11 @@ export class QuizzService {
     });
     const categories = Array.from(categorySet);
     categories.forEach((cat) => {
-      quizz.categories.push({ catName: cat, items: [] });
+      quizz.categories.push({ name: cat, items: [] });
     });
     tempQuizz.items.forEach((item) => {
       const idx = quizz.categories.findIndex(
-        (cat) => cat.catName === item.category,
+        (cat) => cat.name === item.category,
       );
       quizz.categories[idx].items.push(item.name);
     });
