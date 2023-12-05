@@ -34,5 +34,3 @@ jobs:
         script: |
               cd ${{secrets.TARGET}} && npm install
               npm run build
-              docker compose down
-              docker composer up -d
