@@ -1,10 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, DeleteResult, UpdateResult, Like, Raw } from 'typeorm';
+import { Repository, Raw } from 'typeorm';
 import { Quizz } from '../quizz.entity';
 import { Item } from '../item.entity';
-import { Score } from '../../score/score.entity';
-import { CreateQuizzDto } from '../dto/quizz.dto';
 import { CreateItemDto } from '../dto/item.dto';
 import * as fs from 'fs-extra';
 import { GenericFilter } from 'src/pagination/generic-filter';
@@ -30,6 +28,7 @@ export class QuizzService {
       theme: undefined,
       user: undefined,
     };
+
     if (filter.name) {
       whereClause.name = Raw(
         (alias) => `LOWER(${alias}) LIKE '%${filter.name.toLowerCase()}%'`,
@@ -41,6 +40,7 @@ export class QuizzService {
     if (filter.creatorId) {
       whereClause.user = { id: filter.creatorId };
     }
+
     const quizzes = await this.QuizzRepository.find({
       relations: ['user'],
       where: whereClause,
