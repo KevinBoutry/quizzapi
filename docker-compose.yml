@@ -35,13 +35,5 @@ services:
       - 443:443
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
-
-  certbot:
-    image: certbot/certbot
-    container_name: certbot_back
-    volumes: 
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
-    command: certonly --webroot -w /var/www/certbot --force-renewal --email kevin.boutry@yahoo.fr -d kafel.fr --agree-tos
+      - $HOME/Front/certbot/conf:/etc/letsencrypt
+      - $HOME/Front/certbot/www:/var/www/certbot
