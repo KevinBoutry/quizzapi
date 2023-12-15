@@ -17,12 +17,10 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: quizz_back
-    environment:
-      - PORT=${PORT}
     ports:
       - '3000:3000'
     depends_on:
       - db
     volumes:
       - ./src:/app/src
-
+      - /home/github/Front/certbot/conf:/app/certs
