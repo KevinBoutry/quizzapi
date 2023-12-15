@@ -26,14 +26,3 @@ services:
     volumes:
       - ./src:/app/src
 
-  nginx:
-    container_name: nginx_back
-    restart: unless-stopped
-    image: nginx
-    ports:
-      - 80:80
-      - 443:443
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - $HOME/Front/certbot/conf:/etc/letsencrypt
-      - $HOME/Front/certbot/www:/var/www/certbot
