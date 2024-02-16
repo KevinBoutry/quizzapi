@@ -28,7 +28,6 @@ import entities from './entities';
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
         entities: entities,
-        synchronize: true,
       }),
       inject: [ConfigService],
     }),
