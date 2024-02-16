@@ -6,6 +6,7 @@ services:
     ports:
       - '3000:3000'
     image: node:lts
+    working_dir: .
     entrypoint: ["npm", "run", "start"]
     volumes:
       - .:/app
