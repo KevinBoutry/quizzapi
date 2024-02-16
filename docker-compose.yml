@@ -6,7 +6,7 @@ services:
     ports:
       - '3000:3000'
     image: node:lts
-    working_dir: /home/github/Front
+    working_dir: /home/github/Back
     entrypoint: ["npm", "run", "start"]
     volumes:
       - .:/app
