@@ -6,8 +6,8 @@ services:
     ports:
       - '3000:3000'
     image: node:lts
-    working_dir: .
+    working_dir: /home/github/Back
     entrypoint: ["npm", "run", "start"]
     volumes:
-      - .:/app
+      - .:/home/github/Back
       - /home/github/Front/certbot/conf:/app/certs
