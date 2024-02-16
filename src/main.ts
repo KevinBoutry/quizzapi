@@ -8,6 +8,7 @@ async function bootstrap() {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
 
   const app = await NestFactory.create(AppModule);
+
   
   app.enableCors();
   app.useGlobalPipes(new ValidationPipe());
