@@ -17,6 +17,7 @@ async function bootstrap() {
     path.resolve(__dirname, '../certs/live/kafel.fr/privkey.pem'),
   );
 
+  
   const httpsOptions = {
     key: fs.readFileSync(path.resolve(basePath, keyPath)),
     cert: fs.readFileSync(path.resolve(basePath, certPath)),
