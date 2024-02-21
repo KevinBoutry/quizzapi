@@ -7,7 +7,7 @@ services:
       - '3000:3000'
     image: node:lts
     working_dir: /home/github/Back
-    entrypoint: ["npm", "run", "start"]
+    entrypoint: ["npm", "run", "start:prod"]
     volumes:
       - .:/home/github/Back
       - /home/github/Front/certbot/conf:/home/github/Back/dist/certs
