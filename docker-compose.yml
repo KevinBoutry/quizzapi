@@ -10,6 +10,6 @@ services:
     entrypoint: ["npm", "run", "start:prod"]
     volumes:
       - .:/home/github/Back
-      - /home/github/Front/certbot/conf:/home/github/Back/dist/certs
+      - /home/github/Front/certbot/conf:/home/github/Back/certs
     extra_hosts:
       - 'host.docker.internal:host-gateway'
